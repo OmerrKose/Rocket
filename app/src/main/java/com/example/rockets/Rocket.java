@@ -11,5 +11,6 @@ public class Rocket {
         @Expose
         public String rocketName;
         @SerializedName("rocket_type")
+        @Expose
         public String rocketType;
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">rockets</string>
+    <string name="rocketName">rocketName</string>
 </resources>

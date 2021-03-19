@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     private static Retrofit retrofit = null;
-    private static String Base_Url = "https://api.spacexdata.com/";
+    private static final String Base_Url = "https://api.spacexdata.com/";
 
     public static Retrofit getClient() {
         if (retrofit == null) {
