@@ -3,6 +3,9 @@ package com.example.rockets;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +19,9 @@ import retrofit2.Response;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import static com.example.rockets.R.id.recyclerView;
+import static com.example.rockets.R.id.rocket;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,14 +53,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        public rv; //TODO how to create variables?
-        rv = findViewById(R.id.recyclerView);
-        Adapter rocketAdapter;
-        rocketAdapter = Adapter(KMutableList(Rocket));
+        RecyclerView rv = this.findViewById(recyclerView);
+
+        List<Rocket> rocketList = new ArrayList<>();
+        Adapter rocketAdapter = new Adapter(rocketList);
+
         Context context = this;
-        rv.apply(); //TODO .apply method
-            layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL, false);
-            Adapter rocketAdapter1 = rocketAdapter;
-        }
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL, false);
+
+        rv.setAdapter(rocketAdapter);
+        rv.setLayoutManager(layoutManager);
     }
 }
